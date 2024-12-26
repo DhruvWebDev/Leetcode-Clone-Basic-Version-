@@ -40,17 +40,18 @@ export default function ProblemClient({ problem }: ProblemClientProps) {
     <div className="container py-10">
       <div className="flex items-center gap-4 mb-6">
         <h1 className="text-2xl font-bold">{problem.title}</h1>
-        <Badge
-          variant={
-            problem.difficulty === "Easy"
-              ? "success"
-              : problem.difficulty === "Medium"
-              ? "warning"
-              : "destructive"
-          }
-        >
-          {problem.difficulty}
-        </Badge>
+       <Badge
+  variant={
+    problem.difficulty === "Easy"
+      ? "secondary"  // Map "success" to "secondary"
+      : problem.difficulty === "Medium"
+      ? "warning"    // You can keep "warning" if it is valid in your design
+      : "destructive"
+  }
+>
+  {problem.difficulty}
+</Badge>
+
       </div>
 
       <div className="grid grid-cols-2 gap-6">
